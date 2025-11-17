@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lia Finance - Tu asistente financiero</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+    <link rel="stylesheet" href="style.css"> <script defer src="app.js"></script> </head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">
+        <img src="LogoLia.png" alt="Lia Finance Logo">
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="activo">Chat</a>
+      <a href="noticias.html">Tendencias</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <img src="liasinfondo.png" alt="Lia, asistente virtual de finanzas" class="lia-hero-image">
+      <div class="text-and-cta">
+        <h1>VISUALIZA. CRECE. TOMA EL CONTROL.</h1>
+        <p>Lia Finance te ofrece herramientas inteligentes y asesoramiento. Conoce el futuro de tus finanzas.</p>
+        <a href="servicios.html" id="ctaButton" class="cta-button">¡Comienza tu Análisis Gratuito!</a>
+      </div>
+      <div class="chat-preview">
+        <div class="chat-bubble">
+          <img src="liasinfondo.png" alt="Lia" class="chat-avatar">
+          <span>Lia</span>
+          <p>¡Te tengo 2 nuevas finanzas en la mano!</p>
+        </div>
+        <input type="text" placeholder="Escribe tu mensaje..." disabled>
+      </div>
+    </div>
+</section>
+<section class="seccion-formulario">
+    
+    <form class="formulario-registro">
+        
+        <h2>Formulario de Registro</h2>
+        <p>Complete todos los datos y sus preferencias</p>
+        
+        <fieldset class="campo-grupo">
+            <label for="nombre">Nombres Completos:</label>
+            <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        </fieldset>
+        
+        <fieldset class="campo-grupo">
+            <label for="pais">País:</label>
+            <select id="pais">
+                <option value="">Seleccione un país</option>
+                <option value="Peru">Perú</option>
+                <option value="Mexico">México</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Argentina">Argentina</option>
+            </select>
+        </fieldset>
+        
+        <fieldset class="campo-grupo" id="grupo-opciones">
+            <legend>Intereses:</legend>
+            <label><input type="checkbox" name="interes" value="tecnologia"> Tecnología</label>
+            <label><input type="checkbox" name="interes" value="educacion"> Educación</label>
+            <label><input type="checkbox" name="interes" value="idiomas"> Idiomas</label>
+        </fieldset>
+        
+        <fieldset class="campo-grupo" id="grupo-opciones">
+            <legend>Género:</legend>
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+        </fieldset>
+        
+        <button type="submit" class="boton-enviar-form">Enviar</button>
+        
+    </form>
+    
+</section>
+<iframe 
+  src="chatbot.html"
+  style="
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 380px;
+    height: 500px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+  ">
+</iframe> <script src="app.js"></script> 
+<footer class="footer-principal">
+    
+    <div class="footer-columna">
+        <h3>Acerca de Lía Finance</h3>
+        <p>
+            Lía Finance es un proyecto dedicado a democratizar la educación financiera. 
+            Ofrecemos herramientas claras, accesibles y personalizadas 
+            para ayudarte a tomar el control de tu futuro económico.
+        </p>
+        <p>&copy; 2025 Lía Finance. Todos los derechos reservados</p>
+    </div>
+    
+    <div class="footer-columna footer-redes"> 
+        <h3>Nuestras redes</h3>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter (X)</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-columna">
+        <h3>Legal y Soporte</h3>
+        <ul>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Políticas de Privacidad</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    
+</footer>
+</body>
+</html>

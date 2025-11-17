@@ -1,0 +1,510 @@
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6; /* Un color de fondo general muy claro */
+  color: #333;
+}
+
+/* --- NUEVO HEADER PRINCIPAL (BARRA SUPERIOR) --- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Este es el código NUEVO para la IMAGEN del logo */
+.logo img {
+  height: 120px; /* <-- Aquí controlas el tamaño del logo (puedes cambiar 35px) */
+  width: auto;  /* Mantiene la proporción */
+  vertical-align: middle; /* Ayuda a centrarlo verticalmente */
+}
+
+.main-nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #555;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent; /* Subrayado sutil */
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #0d6efd;
+}
+
+.main-nav a.activo {
+  color: #0d6efd;
+  border-bottom-color: #0d6efd;
+}
+
+/* --- NUEVA SECCIÓN HERO (LA OSCURA) --- */
+.hero-section {
+  background-color: #16B2AB; /* <-- NUEVO COLOR TURQUESA */
+  color: #ffffff;
+  padding: 60px 40px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lia-hero-image {
+  width: 400px; /* Ajusta este tamaño si es necesario */
+  height: auto;
+  margin-right: 40px;
+}
+
+.text-and-cta {
+  flex: 1;
+  max-width: 550px;
+}
+
+.text-and-cta h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.text-and-cta p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #ffffff; /* <-- CAMBIO A BLANCO PURO */
+}
+
+.cta-button {
+  background-color: #f3f3f3; /* Color turquesa/menta de acento */
+  color: #1a2b4a; /* Texto oscuro para contraste */
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px; /* Botón redondeado */
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px); /* Efecto de levantar */
+}
+
+/* --- CHAT PREVIEW (NO USADO EN ESTE DISEÑO, PERO LISTO) --- */
+/* (Oculto por ahora para dar prioridad al chat completo) */
+.chat-preview {
+  display: none; 
+}
+
+/* --- SECCIÓN DEL CHAT COMPLETO --- */
+.full-chat-section {
+  padding: 40px 0;
+  background-color: #f4f7f6;
+}
+
+.hidden {
+  display: none; /* Clase para ocultar/mostrar elementos */
+}
+
+/* --- TUS ESTILOS DE CHAT (REUTILIZADOS) --- */
+.contenedor-chat {
+  max-width: 800px;
+  height: 70vh; /* Altura del chat */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Clave para que los bordes redondeados funcionen */
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fef5e7; /* Tu color durazno */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.lia-mini-image {
+  width: 60px; /* Tamaño de Lia en el header del chat */
+  height: auto;
+  margin-right: 15px;
+}
+
+.info-cabecera .titulo {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.info-cabecera .subtitulo {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
+
+#cuerpoChat {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Scroll SÓLO en el cuerpo de mensajes */
+  background-color: #fdfbf5; /* Tu color beige */
+}
+
+.mensaje-bot, .mensaje-usuario {
+  padding: 10px 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  line-height: 1.5;
+}
+
+.mensaje-bot {
+  background-color: #e9ecef; /* Color gris claro para el bot */
+  color: #333;
+  align-self: flex-start; /* Alineado a la izquierda */
+}
+
+.mensaje-usuario {
+  background-color: #0d6efd; /* Color azul para el usuario */
+  color: white;
+  align-self: flex-end; /* Alineado a la derecha */
+}
+
+#cuerpoChat {
+  display: flex;
+  flex-direction: column;
+}
+
+.entrada {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+#inputMensaje {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#botonEnviar {
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* --- TUS ESTILOS DE PÁGINAS (NOTICIAS Y PRODUCTOS) --- */
+/* (Estos estilos se aplicarán a las otras páginas) */
+.contenido-pagina {
+  padding: 25px;
+  color: #333;
+  max-width: 900px;
+  margin: 20px auto; /* Centra el contenido */
+}
+/* ... (El resto de estilos de .noticia-item y .producto-grid se quedan igual) ... */
+.noticia-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.noticia-item h3 { margin-top: 0; color: #333; }
+.noticia-item p { line-height: 1.6; }
+.noticia-item a { text-decoration: none; color: #0d6efd; font-weight: 600; }
+.noticia-item a:hover { text-decoration: underline; }
+
+.producto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+.producto-item {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.producto-item:hover { transform: translateY(-5px); }
+.producto-item img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+}
+.producto-item h3 { margin: 10px 0; color: #333; font-size: 20px; }
+.producto-item .precio { font-size: 24px; font-weight: 700; color: #0d6efd; margin: 10px 0; }
+.producto-item .stock { font-size: 14px; color: #6c757d; margin-bottom: 20px; }
+.boton-producto {
+  display: inline-block;
+  background-color: #0d6efd;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.boton-producto:hover { background-color: #0b5ed7; }
+@media (max-width: 768px) {
+  .producto-grid { grid-template-columns: 1fr; }
+  .hero-content { flex-direction: column; text-align: center; }
+  .lia-hero-image { margin-right: 0; margin-bottom: 30px; }
+}
+/* --- Estilos para la Página "Nosotros" --- */
+.nosotros-content {
+  display: flex;
+  align-items: flex-start; /* Alinea arriba */
+  gap: 30px; /* Espacio entre imagen y texto */
+  margin-top: 30px;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nosotros-imagen {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.nosotros-texto {
+  flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.nosotros-texto h2 {
+  color: #1a2b4a; /* Azul oscuro */
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.nosotros-texto p {
+  line-height: 1.7; /* Texto más legible */
+  margin-bottom: 20px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .nosotros-content {
+    flex-direction: column; /* Pone la imagen encima del texto */
+    align-items: center;
+    text-align: center;
+  }
+}
+/* --- ESTILOS PARA CHAT FLOTANTE --- */
+
+/* 1. El botón de la burbuja */
+.boton-abrir-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #16B2AB; /* Tu color turquesa */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.boton-abrir-chat:hover {
+    transform: scale(1.1);
+}
+
+/* 2. La ventana del chat (el ID que pusimos en chatbot.html) */
+#mi-chat-flotante {
+    position: fixed;
+    bottom: 90px; 
+    right: 20px;
+    width: 350px; 
+    height: 500px; 
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #ffffff; 
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+
+    /* MUY IMPORTANTE: Empieza oculto */
+    display: none; 
+}
+/* --- ESTILOS PARA EL NUEVO FORMULARIO DE REGISTRO --- */
+
+/* El fondo azul claro de la sección */
+.seccion-formulario {
+    background-color: #e0f7fa; /* Tono azul claro */
+    padding: 50px 20px;
+}
+
+/* El contenedor principal del formulario (fondo beige) */
+.formulario-registro {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fef9e7; /* Tono beige/amarillo claro */
+    padding: 30px;
+    border: 1px solid #e6dcae;
+    border-radius: 8px;
+}
+
+.formulario-registro h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+
+.formulario-registro p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* El grupo de cada campo (con borde rojo) */
+.campo-grupo {
+    border: 1px solid #e74c3c; /* Borde rojo */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Fondo verde para los grupos de opciones */
+#grupo-opciones {
+    background-color: #a3e4d7; /* Tono verde claro */
+}
+
+.campo-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs y Selects */
+.campo-grupo input[type="text"],
+.campo-grupo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Importante */
+}
+
+/* Opciones de Checkbox y Radio */
+.campo-grupo input[type="checkbox"],
+.campo-grupo input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Botón de Enviar (naranja) */
+.boton-enviar-form {
+    background-color: #e67e22; /* Tono naranja */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.boton-enviar-form:hover {
+    background-color: #d35400; /* Naranja más oscuro */
+}
+/* --- ESTILOS PARA EL FOOTER PRINCIPAL --- */
+
+.footer-principal {
+    background-color: #e0f7fa; /* El fondo azul-verde claro de tu imagen */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around; /* Espacia las 3 columnas */
+    flex-wrap: wrap; /* Para que se vea bien en móvil */
+    border-top: 1px solid #b2dfdb;
+}
+
+.footer-columna {
+    flex: 1; /* Cada columna ocupa el mismo espacio */
+    min-width: 280px; /* Ancho mínimo antes de que se reordenen */
+    padding: 0 20px;
+    margin-bottom: 20px; /* Espacio por si se reordenan en móvil */
+}
+
+.footer-columna h3 {
+    color: #0000FF; /* Azul */
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.footer-columna p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo para las listas */
+.footer-columna ul {
+    padding-left: 20px; /* Mantiene las viñetas (bullets) */
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Quita las viñetas SOLO a la columna de redes */
+.footer-redes ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-columna li {
+    margin-bottom: 8px;
+}
+
+/* Estilo de los enlaces */
+.footer-columna a {
+    color: #333; /* Color oscuro para los enlaces */
+    text-decoration: none;
+}
+
+.footer-columna a:hover {
+    text-decoration: underline;
+}
